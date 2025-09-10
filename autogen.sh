@@ -342,6 +342,10 @@ hooks=$git_common_dir/hooks
 
 git_config transfer.fsckObjects true
 
+# The MPS repo from https://github.com/Ravenbrook/mps contained many
+# objects that cause gitignoreSymlink warnings.  Those warnings can be
+# safely ignored.
+git_config fsck.gitignoreSymlink ignore
 
 # Configure 'git diff' hunk header format.
 
@@ -362,7 +366,6 @@ git_config 'diff.shell.xfuncname' \
 	   '^([[:space:]]*[[:alpha:]_][[:alnum:]_]*[[:space:]]*\(\)|[[:alpha:]_][[:alnum:]_]*=)'
 git_config diff.texinfo.xfuncname \
 	   '^@node[[:space:]]+([^,[:space:]][^,]+)'
-
 
 # Install Git hooks.
 
