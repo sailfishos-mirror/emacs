@@ -392,6 +392,13 @@ exec/config-mips.m4
 exec/configure
 exec/*.s.s
 
+# Keep empty mps/tool/autoconf/build-aux directory around
+!mps/tool/autoconf/build-aux/.gitkeep
+mps/tool/autoconf/build-aux/config.guess
+mps/tool/autoconf/build-aux/config.sub
+mps/tool/autoconf/build-aux/install-sh
+mps/configure
+
 # MPS telemetry output
 /src/mpsio.txt
 /compile_commands.events.json
