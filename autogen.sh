@@ -261,6 +261,12 @@ Please report any problems with this script to bug-gnu-emacs@gnu.org .'
     mv aclocal.m4.tmp aclocal.m4
   fi || exit
 
+  # Install auxiliary build tools for mps/
+  mkdir -p mps/tool/autoconf/build-aux
+  for file in config.guess config.sub install-sh; do
+    cp -p build-aux/$file mps/tool/autoconf/build-aux/ || exit
+  done
+
   echo "Running 'autoreconf -fi -I m4' ..."
 
   ## Let autoreconf figure out what, if anything, needs doing.
